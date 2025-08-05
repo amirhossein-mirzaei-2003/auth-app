@@ -48,3 +48,80 @@ button {
 button:hover {
   background-color: #555;
 }
+
+/* Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* User Greeting */
+.nav__text {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Auth Links Container */
+.nav__auth {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* 👈 spacing between Login and Sign Up */
+}
+
+/* Links */
+.nav__link {
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+/* Logout Button */
+.nav__form {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__btn {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav__btn:hover {
+  color: #ccc;
+  text-decoration: underline;
+}

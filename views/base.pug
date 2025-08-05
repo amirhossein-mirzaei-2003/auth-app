@@ -6,10 +6,7 @@ html(lang="en")
     link(rel="stylesheet" href="/css/style.css")
     title #{title}
   body
-    header.navbar
-      nav
-        ul.nav
-          li: a(href="/") Home
-          li: a(href="/signup") Sign Up
-          li: a(href="/login") Log In
+    include _header
     block content
+
+    script(src='/js/bundle.js')

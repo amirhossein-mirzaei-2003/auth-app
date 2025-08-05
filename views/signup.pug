@@ -1,11 +1,19 @@
-extends layout
+extends base
 
 block content
-  .container
-    h2 Sign Up
-    form(action="/signup" method="POST")
-      input(type="text" name="name" placeholder="Name" required)
-      input(type="email" name="email" placeholder="Email" required)
-      input(type="password" name="password" placeholder="Password" required)
-      input(type="password" name="passwordConfirm" placeholder="Confirm Password" required)
-      button(type="submit") Create Account
+  h1 Sign Up
+
+  form(action="/signup" method="POST")
+    label(for="name") Name:
+    input(type="text" name="name" required)
+
+    label(for="email") Email:
+    input(type="email" name="email" required)
+
+    label(for="password") Password:
+    input(type="password" name="password" required)
+
+    label(for="passwordConfirm") Confirm Password:
+    input(type="password" name="passwordConfirm" required)
+
+    button(type="submit") Sign Up

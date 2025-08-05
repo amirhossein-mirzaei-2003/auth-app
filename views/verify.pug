@@ -1,0 +1,13 @@
+extends base
+
+block content
+  h1 Verify Your Email
+
+  p A 6-digit verification code has been sent to your email.
+  p#timer You have 5:00 minutes remaining.
+
+  form(action="/verify-signup" method="POST")
+    label(for="code") Enter Verification Code:
+    input(type="text" name="code" required maxlength="6")
+
+    button(type="submit") Verify

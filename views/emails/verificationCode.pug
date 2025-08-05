@@ -1,0 +1,18 @@
+extends base
+
+
+block content 
+    p Hi #{firstName},
+    p Welcome to Auth App
+    p this is your verification code: #{code}
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') verification code
+    p if you didn't ask for verification code , please ignore this email!
+    p - Amirhossein Mirzaei, CEO

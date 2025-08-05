@@ -43,6 +43,14 @@ const handleValidationError = (err) => {
   return new AppError(message, 400);
 };
 
+const handleJsonWebTokenError = () => {
+  return new AppError('invalid token. please log in again!', 401);
+};
+
+const handkeTokenExpiredError = () => {
+  return new AppError('token have been expired. please log in again!', 401);
+};
+
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
@@ -55,12 +63,15 @@ module.exports = (err, req, res, next) => {
     let error = { ...err };
     error.message = err.message;
     error.name = err.name;
-    error.errmsg = err.err.msg;
+    error.errmsg = err.errmsg;
     error.code = err.code;
 
     if (error.name === 'CastError') error = handleCastError(error);
     if (error.code === 11000) error = handleDuplicateFieldError(error);
     if (error.name === 'ValidationError') error = handleValidationError(error);
+    if (error.name === 'JsonWebTokenError') error = handleJsonWebTokenError();
+    if (error.name === 'TokenExpiredError') error = handkeTokenExpiredError();
+
     sendErrorProd(error, res);
   }
 };

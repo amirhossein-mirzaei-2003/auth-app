@@ -3,3 +3,9 @@ exports.getHome = (req, res, next) => {
     title: 'home page',
   });
 };
+
+exports.getSignup = (req, res, next) => {
+  res.status(200).render('signup', {
+    title: 'signup',
+  });
+};

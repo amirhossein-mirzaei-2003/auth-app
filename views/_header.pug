@@ -1,0 +1,13 @@
+header.header
+  nav.nav
+    a.nav__logo(href="/") Home
+
+    if user
+      div.nav__user
+        span Hello, #{user.name}!
+        form(action="/logout" method="POST")
+          button(type="submit") Logout
+    else
+      div.nav__auth
+        a(href="/login") Login
+        a(href="/signup") Sign Up
