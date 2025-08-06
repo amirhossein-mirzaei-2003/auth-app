@@ -4,9 +4,9 @@ header.header
 
     if user
       div.nav__user
-        span Hello, #{user.name}!
-        form(action="/logout" method="POST")
-          button(type="submit") Logout
+        span Hello   #{ user.name}
+        
+        a.logout(href="/logout") Log out
     else
       div.nav__auth
         a(href="/login") Login

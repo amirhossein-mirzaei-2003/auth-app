@@ -133,6 +133,16 @@ exports.login = cachAsync(async (req, res, next) => {
   createSendToken(user, 200, res);
 });
 
+exports.logout = catchAsync(async (req, res, next) => {
+  res.cookie('jwt', 'loged out', {
+    expires: new Date(Date.now() + 10 * 1000),
+  });
+
+  res.status(200).json({
+    status: 'success',
+  });
+});
+
 exports.isLogedIn = async (req, res, next) => {
   // 1) check token exist in client
   if (req.cookies.jwt) {
@@ -235,7 +245,7 @@ exports.forgotPassword = cachAsync(async (req, res, next) => {
   // 4) send email
   const resetUrl = `${req.protocol}://${req.get(
     'host'
-  )}/api/v1/users/resetPassword/${resetToken}`;
+  )}/resetPassword/${resetToken}`;
   try {
     await new Email(user, resetUrl).sendResetPassword();
   } catch (err) {

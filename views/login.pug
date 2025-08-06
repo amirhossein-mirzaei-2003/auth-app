@@ -1,13 +1,19 @@
 extends base
 
-block content
-  h1 Login
-
-  form(action="/login" method="POST")
-    label(for="email") Email:
-    input(type="email" name="email" required)
-
-    label(for="password") Password:
-    input(type="password" name="password" required)
-
-    button(type="submit") Login
+block content 
+    main.main
+        .login-form
+            h2.heading-secondary.ma-bt-lg Log into your account
+            form.form.login--form
+                .form__group
+                    label.form__label(for='email') Email address
+                    input#email.form__input(type='email', placeholder='you@example.com', required)
+                .form__group.ma-bt-md
+                    label.form__label(for='password') Password
+                    input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                a(href='/forgotPassword', class='form__link') Forgot your password?
+                | 
+                .form__group
+                    button.btn.btn--green Login
+                .form__group
+                    
