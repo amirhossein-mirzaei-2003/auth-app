@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 const compression = require('compression');
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Set view engine
 app.set('view engine', 'pug');
