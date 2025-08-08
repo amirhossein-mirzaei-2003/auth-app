@@ -1,6 +1,11 @@
 🛡️ Node.js Authentication App
 A full-featured authentication system built with Node.js, Express, MongoDB, and JWT. It includes user sign up, login, logout, email verification, forgot/reset password, protected routes, and a responsive frontend using Pug and Parcel.
 
+## Live Demo
+
+Check out the deployed app here: [https://auth-app-ose8.onrender.com](https://auth-app-ose8.onrender.com)
+
+
 🚀 Features
 ✅ Sign up with email verification (code-based)
 
